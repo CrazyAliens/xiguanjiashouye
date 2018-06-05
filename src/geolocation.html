@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://apis.map.qq.com/tools/geolocation?key=MF5BZ-AQV6F-3TQJ5-J6TQJ-QHE2K-MKBK4&referer=myapp -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <title>腾讯地图 - 前端定位组件</title>
+        
+        
+        
+    <link rel="stylesheet" href="static/css/geolocation_c55a9bf.css"></head>
+    <body>
+        <p id="geoResult">长沙市</p>
+        <div id="loading" class="fadeout">
+            
+        </div>
+
+        
+
+        
+    <script type="text/javascript" src="javascript/mod_0d3c97a.js"></script><script type="text/javascript" src="javascript/geolocation_libs_2d170c8.js"></script><script type="text/javascript">!function() {
+
+    window.listener.on('common.geolocation', 'success', function(evt, loc) {
+        var result = loc.addr || loc.city;
+        document.getElementById('geoResult').innerHTML = result;
+        document.getElementById('loading').className = 'fadeout';
+    });
+    window.listener.on('common.geolocation', 'fail', function() {
+        document.getElementById('geoResult').innerHTML = '定位失败';
+        document.getElementById('loading').className = 'fadeout';
+    });
+
+    window._prStat = require('geolocation:static/js/util/stat.js');
+    window._prStat.init({
+        appId: 'mc_geolocation',
+        statService: '//pr.map.qq.com/pingd',
+        from: 'myapp'
+    });
+
+    window._DEFAULT_CITY = {"module":"geolocation","type":"ip","adcode":430104,"nation":"中国","province":"湖南省","city":"长沙市","district":"","addr":"","lat":28.23529,"lng":112.93134,"accuracy":10000,"ip":"113.246.110.93"};
+    require('geolocation:static/js/boot.js').init({key: 'MF5BZ-AQV6F-3TQJ5-J6TQJ-QHE2K-MKBK4', initgeo: true, debug: 0, clearCache: 0, locType: ''});
+    }();</script>
+
+    
+
+</body></html>
